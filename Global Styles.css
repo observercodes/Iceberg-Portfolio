@@ -803,14 +803,25 @@ width: 20px;
 @media (max-width: 400px) {
     .B3 { 
         /* Centers the buttons and forces a 5px minimum gap */
-        justify-content: center; 
-        gap: 5px; 
-        margin-left: 5px;
-        margin-right: 5px;
+        display: flex;
+        justify-content: space-between; /* Pushes left/right buttons to the walls */
+        width: auto;
+        margin-left: 25px;  /* Matches your PB1, PB2, and Bio margins */
+        margin-right: 25px; /* Matches your PB1, PB2, and Bio margins */
+        gap: 8px;
     }
 
     .B3 a {
         /* Allows buttons to narrow down to respect the gap */
+        width: 100px;        /* Reduced from 115px */
+        height: 62px;       /* Reduced from 70px */
+        border-radius: 24px; /* Slightly smaller radius to match the scale */
+        
+        --icon-size: 24px;   /* Shrinks the icon height slightly */
+        --icon-top-dist: 6px; 
+        --text-bot-dist: 4px;
+        
+        font-size: 14px;     /* Optional: slightly smaller font for the smaller button */
         flex-shrink: 1;
         min-width: 0;
     }
