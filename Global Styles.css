@@ -177,7 +177,7 @@ letter-spacing: -1px;
 }
 .I1 {
     /* --- THE SLIDER --- */
-    --logo-size: 85%;      /* Change this % to adjust your logo size (0% to 100%) */
+    --logo-size: 90%;      /* Change this % to adjust your logo size (0% to 100%) */
     width: 80px;
     height: 80px;
     border-radius: 50%;
