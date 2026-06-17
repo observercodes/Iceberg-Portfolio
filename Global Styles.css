@@ -132,23 +132,15 @@ rgba(0, 0, 0, 0.05) 100%
 );
 }
 .I1T1 {
-    --top-wall-dist: 20px;
-    --i1-t1-gap: 15px;
+    padding-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    align-items: center;
-    justify-content: center; /* Keep the overall group centered */
-    padding-top: var(--top-wall-dist);
-    /* padding right aligns the logo with the b3 buttons left */
-
-    gap: var(--i1-t1-gap);
-    width: 100%;        /* 1. Add this to ensure it spans the whole screen */
-    margin-left: 0;     /* 2. Remove the 10px margin */
-    margin-right: 0;    /* 3. Remove the 10px margin */
-    padding-right: 0;   /* 4. ENSURE this is 0 (it was 19px previously) */
+    justify-content: center;
 }
 .T1 {
     --gap-top-mid: 2px;
-    --gap-mid-bot: 15px;
+    --gap-mid-bot: 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* This aligns the 'H' in HVAC and 'L' in License */
@@ -175,27 +167,35 @@ font-size: var(--size-5);
 color: var(--color-5);
 letter-spacing: -1px;
 }
+
 .I1 {
-    /* --- THE SLIDER --- */
-    --logo-size: 90%;      /* Change this % to adjust your logo size (0% to 100%) */
-    width: 80px;
+    --logo-size: 70px;
+    width: calc(100% - 20px);  /* same as B3's margin-left + margin-right */
+    max-width: 375px;           /* caps it to button row width on wider phones */
     height: 80px;
-    border-radius: 50%;
+    border-radius: 28px;
     background-color: var(--glass-bg);
     border: var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    background-image: var(--glass-shine);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: flex-start;
+    padding-left: 15px;
+    gap: 12px;
 }
+
 .LogoImg {
     width: var(--logo-size); /* This connects the image size to the 'slider' variable above */
-    height: auto;
-    display: block;
-    object-fit: contain;  /* Removed mix-blend-mode since your logo is already transparent */
+    height: var(--logo-size);
+    object-fit: contain;
+    flex-shrink: 0;
 }
 .B3 {
-margin-top: 20px;
+margin-top: 10px;
 margin-left: 10px;
 margin-right: 10px;
 display: flex;
@@ -582,38 +582,36 @@ width: 20px;
     transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
-/* --- BWC Businesses we worked with carosel --- */
-/* Target the specific track to control the gap */
-/* Align the carousel start with the text headers */
-/* Ensure the Business Carousel aligns exactly like the others */
-/* Target the track to match the global alignment */
-/* 1. Reset the Business track to match global behavior */
-/* 1. Add a spacer to the start of the track to match your 15px/20px page margin */
-/* --- THE FIX FOR WALL TOUCHING --- */
+/* --- BWC Businesses we worked with carousel --- */
 
-/* 1. Ensure the track has no padding that gets ignored */
 #BWC .c-track {
     display: flex;
-    gap: 10px;
-    padding-left: 0 !important;
+    flex-wrap: nowrap;
+    gap: 15px;
+    width: max-content !important; /* Force width to fit content */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
-/* 2. Push ONLY the first item away from the left wall */
-#BWC .bwc-item:first-child {
-    margin-left: 15px !important; /* Matches your page margin */
-}
-
-/* 3. Push ONLY the last item away from the right wall */
-#BWC .bwc-item:last-child {
-    margin-right: 15px !important;
-}
-
-/* 4. Keep the item size strict */
 #BWC .bwc-item {
     flex: 0 0 80px !important;
     width: 80px !important;
     min-width: 80px !important;
-    scroll-snap-align: start;
+    margin: 0 !important;
+    scroll-snap-align: unset;
+}
+
+#BWC .bwc-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Make the container hide overflow properly */
+#BWC {
+    overflow: hidden !important;
 }
 
 /* IP Page Selector Styles */
@@ -706,6 +704,15 @@ width: 20px;
 
 /* Desktop adjustments */
 @media (min-width: 768px) {
+    
+    .I1T1 {
+        display: flex;
+        justify-content: center;
+    }
+    .I1 {
+        max-width: 375px;  /* 115×3 buttons + 15×2 gaps + 10×2 margins */
+    } 
+    
     .AboutPhotoWrapper, .AboutDescription {
         padding: 0; 
         margin-top: 20px;
@@ -826,3 +833,50 @@ width: 20px;
         min-width: 0;
     }
 }
+
+@media (max-width: 767px) {
+    .I1T1 {
+        transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, padding 0.3s ease;
+        max-height: 120px;
+        overflow: hidden;
+    }
+
+    .scrolled .I1T1 {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+        padding-top: 0;
+    }
+}
+
+.Footer {
+    text-align: center;
+    padding: 30px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    /* Glass Effect */
+    background-color: var(--glass-bg);
+    background-image: var(--glass-shine);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-top: var(--glass-border);
+}
+
+.FooterText {
+    font-family: var(--font-5);
+    font-size: var(--size-5);
+    color: var(--color-5);
+    font-weight: var(--weight-5);
+}
+
+.FooterPhone {
+    font-family: var(--font-5);
+    font-size: var(--size-5);
+    color: var(--color-5);
+    font-weight: var(--weight-5);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+

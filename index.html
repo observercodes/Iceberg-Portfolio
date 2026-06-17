@@ -15,16 +15,14 @@
 <div class="HeaderContainer">
 
 <div class="I1T1">
-
-<div class="I1">
-    <img src="https://i.postimg.cc/KYDVKf7N/iceberg_logo_v3_2_01.png" alt="Iceberg Logo" class="LogoImg">
-</div>
-
-<div class="T1">
-    <p class="T13T">Iceberg Appliance Inc</p>
-    <p class="T14M">License C20 #1129607</p>
-</div>
-
+  <div class="I1">
+    <img src="https://i.postimg.cc/KYDVKf7N/iceberg_logo_v3_2_01.png"
+         alt="Iceberg Logo" class="LogoImg">
+    <div class="T1">
+      <p class="T13T">Iceberg Appliance Inc</p>
+      <p class="T14M">HVAC Services • Los Angeles CA</p>
+    </div>
+  </div>
 </div>
 
 <div class="B3">
@@ -126,19 +124,23 @@
     </div>
     <div class="AboutDescription">
     <div class="DescriptionText">
-        <p class="MainBio"> Hello, my name is Kamo, I have been in the HVAC field for over a decade, and have worked on everything from small heat pumps to large commercial air conditioning systems. My family owns and operates Iceberg Appliance Inc from 2020, and its been great to meet and work with everybody we have so far.
-        </p>
+    <p class="MainBio">
+    My name is Kamo, and HVAC has been my trade for 13+ years, from small 
+    heat pumps to large commercial systems. Iceberg Appliance Inc is a family 
+    business, and we've been serving the Los Angeles area since 2016, and it means 
+    a lot to us to do right by every customer we meet.
+    </p>
         
         <p class="HelpIntro">I’m here to help you with:</p>
         
         <ul class="HelpList">
-            <li>Pick and install any HVAC equipment</li>
-            <li>Repair machinery you depend on</li>
-            <li>And maintain your current systems</li>
+            <li>Install any system, from minisplit units to full commercial builds</li>
+            <li>Repair the equipment your home or business runs and depends upon</li>
+            <li>Maintain what you have to avoid costly breakdowns</li>
         </ul>
         
         <p class="ClosingBio">
-            I focus on keeping your systems up and running, and the costs down.
+            We keep your systems running and your costs down.
         </p>
     </div>
     </div>
@@ -170,6 +172,26 @@
             <div class="c-item bwc-item"><img src="https://i.postimg.cc/tCSmk10C/BI1.png" class="bwc-circle"></div>
             <div class="c-item bwc-item"><img src="https://i.postimg.cc/Qt6Xrrhq/BI6.png" class="bwc-circle"></div>
             <div class="c-item bwc-item"><img src="https://i.postimg.cc/B6Zqyv9b/BI5.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/vTMsktCZ/BI11.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/d1GF5xHj/BI10.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/HLcdyxQn/BI9.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/SxtmR8YP/BI8.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/dtHbjFQM/BI12.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/XYrT2PXy/BI13.png" class="bwc-circle"></div>
+        
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/MpXyQ1s7/BI7.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/Mpg3khKt/BI2.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/BZNhZ8nC/BI4.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/PxQSwJzN/BI3.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/tCSmk10C/BI1.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/Qt6Xrrhq/BI6.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/B6Zqyv9b/BI5.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/vTMsktCZ/BI11.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/d1GF5xHj/BI10.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/HLcdyxQn/BI9.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/SxtmR8YP/BI8.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/dtHbjFQM/BI12.png" class="bwc-circle"></div>
+            <div class="c-item bwc-item"><img src="https://i.postimg.cc/XYrT2PXy/BI13.png" class="bwc-circle"></div>
         </div></div>
 </div>
 
@@ -340,20 +362,65 @@ sliders.forEach(slider => {
     });
 });
 
-function toggleInventory(type) {
-    // Hide all three inventory sections
-    document.getElementById('inventory-ducted').style.display = 'none';
-    document.getElementById('inventory-ductless').style.display = 'none';
-    document.getElementById('inventory-accessories').style.display = 'none';
-    
-    // Show the specifically selected section
-    document.getElementById('inventory-' + type).style.display = 'block';
-    
-    // Toggle Button Active State
-    document.querySelectorAll('.sub-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById('btn-' + type).classList.add('active');
-}
+(function () {
+    const track = document.querySelector("#BWC .c-track");
+    if (!track) return;
+
+    // Clone the items to create an infinite loop effect
+    const items = track.innerHTML;
+    track.innerHTML = items + items; // Double the items
+
+    let position = 0;
+    const speed = 0.35; // Pixels per frame (adjust for speed)
+    let animationId = null;
+
+    // Calculate the width of one set of logos
+    function getTrackWidth() {
+        // Get the total width of all items including gaps
+        const totalWidth = track.scrollWidth / 2; // Since we doubled the items
+        return totalWidth;
+    }
+
+    function animate() {
+        position += speed;
+        
+        const loopWidth = getTrackWidth();
+        
+        // Reset position when we've scrolled through one full set
+        if (position >= loopWidth) {
+            position = 0;
+            // Instant reset without animation
+            track.style.transition = 'none';
+            track.style.transform = `translate3d(0, 0, 0)`;
+            // Force reflow
+            track.offsetHeight;
+            track.style.transition = '';
+        }
+        
+        track.style.transform = `translate3d(${-position}px, 0, 0)`;
+        
+        animationId = requestAnimationFrame(animate);
+    }
+
+    // Start the animation
+    animate();
+
+    // Clean up on page unload
+    window.addEventListener('beforeunload', () => {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+    });
+
+})();
+
 </script>
+
+<div class="Footer">
+    <p class="FooterText">Iceberg Appliance Inc · Keeping LA Cool Since 2016 😎</p>
+    <p class="FooterText">License C20 #1129607</p>
+    <a href="tel:+18188142230" class="FooterPhone">For Support Contact: +1(818)814-2230</a>
+</div>
 
 </body>
 </html> 
