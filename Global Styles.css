@@ -432,7 +432,9 @@ width: 20px;
 #CBN2 {
     transform: scaleX(0.95); 
     transform-origin: left;
-    white-space: nowrap; 
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .AboutPhotoWrapper {
     width: 100%;
@@ -671,6 +673,123 @@ width: 20px;
 .sub-btn:active {
     transform: scale(0.95);
 }
+
+
+/* --- NEW REUSABLE BUTTON COMPONENT --- */
+.ReusableButton {
+    /* Sizing & spacing */
+    height: 85px;
+    margin: 15px 15px 0 15px;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 15px 15px 15px;
+    
+    /* Glassmorphism (matches your B3 buttons) */
+    text-decoration: none;
+    border-radius: 60px;
+    cursor: pointer;
+    border: var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    background-color: var(--glass-bg);
+    background-image: var(--glass-shine);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    /* Transitions */
+    transition: transform 0.2s ease, background-image 0.8s ease, box-shadow 0.8s ease;
+}
+
+/* Each row inside the button */
+.RB-Row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    /* Leave space for the icon on the right */
+    padding-right: 80px;
+    box-sizing: border-box;
+}
+
+/* Text styles (same as your #3 and #5 presets) */
+.RB-Name {
+    font-family: var(--font-3);
+    font-weight: var(--weight-3);
+    font-size: var(--size-3);
+    color: var(--color-3);
+    line-height: 1;
+}
+
+.RB-Info {
+    font-family: var(--font-5);
+    font-weight: var(--weight-5);
+    font-size: var(--size-5);
+    color: var(--color-5);
+    line-height: 1;
+}
+
+/* Icon – absolute positioned on the right */
+.RB-Icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75px;
+    width: auto;
+}
+
+/* Hover (desktop only) */
+@media (hover: hover) {
+    .ReusableButton:hover {
+        transform: translateY(-2px);
+        background-color: rgba(238, 238, 238, 0.7);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border: 1.5px solid rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Active (click) state – squish + white flash */
+.ReusableButton:active {
+    transform: scale(0.98) !important;
+    background-color: #ffffff !important;
+    background-image: linear-gradient(135deg, #ffffff 0%, #ffffff 100%) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4) !important;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+/* Mobile adjustment */
+@media (max-width: 400px) {
+    .ReusableButton {
+        height: 75px;
+        padding: 10px 12px;
+    }
+    .RB-Row {
+        padding-right: 70px;
+    }
+    .RB-Icon {
+        height: 60px;
+    }
+    .RB-Name {
+        font-size: 14px;
+    }
+    .RB-Info {
+        font-size: 13px;
+    }
+}
+
+
 
 /* Hover and click animations */
 @media (hover: hover) {
