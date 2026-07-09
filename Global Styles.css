@@ -316,20 +316,13 @@ width: 100%;
 
 }
 .c-container {
-
-overflow-x: auto;
-
-overflow-y: hidden;
-
--webkit-overflow-scrolling: touch;
-
-scrollbar-width: none;
-
-scroll-snap-type: x mandatory;
-
-scroll-behavior: smooth;
-
-padding-bottom: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
 
 }
 .c-container::-webkit-scrollbar { display: none; }
@@ -679,12 +672,10 @@ width: 20px;
 .ReusableButton {
     /* Sizing & spacing */
     height: 85px;
-    margin: 15px 15px 0 15px;
-    position: relative;
+    width: calc(100% - 30px);   
     max-width: 500px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 15px auto 0 auto;   
+    position: relative;
     box-sizing: border-box;
     
     /* Layout */
@@ -999,3 +990,17 @@ width: 20px;
     text-underline-offset: 4px;
 }
 
+.FooterBrand {
+    font-family: var(--font-3);
+    font-weight: var(--weight-3);
+    font-size: 15px;
+    color: var(--color-3);
+}
+
+.FooterFine {
+    font-family: var(--font-5);
+    font-size: 12px;
+    color: hsl(0, 0%, 45%);
+    font-weight: 300;
+    line-height: 1.4;
+}
