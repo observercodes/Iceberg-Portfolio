@@ -579,13 +579,19 @@ width: 20px;
 
 /* --- BWC Businesses we worked with carousel --- */
 
+/* --- BWC Businesses we worked with carousel --- */
+#BWC {
+    overflow: hidden;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
 #BWC .c-track {
     display: flex;
     flex-wrap: nowrap;
     gap: 15px;
-    width: max-content !important; /* Force width to fit content */
+    width: max-content;
     will-change: transform;
-    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
 }
 
@@ -602,11 +608,9 @@ width: 20px;
     height: 80px;
     object-fit: contain;
     display: block;
-}
-
-/* Make the container hide overflow properly */
-#BWC {
-    overflow: hidden !important;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 /* IP Page Selector Styles */
@@ -912,7 +916,11 @@ width: 20px;
     }
     /* Optional: Ensure the gap logic is clean on desktop */
     #BWC .c-track {
-        gap: 20px; /* You might want more space between logos on PC */
+        display: flex;
+        width: max-content;
+        min-width: 0;
+        justify-content: flex-start;
+        padding: 0;
     }
 }
 

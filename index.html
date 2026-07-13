@@ -362,7 +362,7 @@ function showPage(pageId) {
 }
 
 // The "Finger-style" Mouse Drag
-const sliders = document.querySelectorAll('.c-container');
+const sliders = document.querySelectorAll('.c-container:not(#BWC)');
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -392,55 +392,86 @@ sliders.forEach(slider => {
 });
 
 (function () {
-    const track = document.querySelector("#BWC .c-track");
-    if (!track) return;
+    const container = document.getElementById('BWC');
+    const track = container ? container.querySelector('.c-track') : null;
+    if (!container || !track) return;
 
-    // Clone the items to create an infinite loop effect
-    const items = track.innerHTML;
-    track.innerHTML = items + items; // Double the items
+    const speed = 0.021; // px per ms (~0.35px/frame at 60fps)
 
-    let position = 0;
-    const speed = 0.35; // Pixels per frame (adjust for speed)
-    let animationId = null;
+    let pos = 0;
+    let lastTimestamp = null;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartPos = 0;
+    let wheelResumeTimeout = null;
 
-    // Calculate the width of one set of logos
-    function getTrackWidth() {
-        // Get the total width of all items including gaps
-        const totalWidth = track.scrollWidth / 2; // Since we doubled the items
-        return totalWidth;
+    function getLoopWidth() {
+        const w = track.scrollWidth / 2;
+        return w > 0 ? w : 0;
     }
 
-    function animate() {
-        position += speed;
-        
-        const loopWidth = getTrackWidth();
-        
-        // Reset position when we've scrolled through one full set
-        if (position >= loopWidth) {
-            position = 0;
-            // Instant reset without animation
-            track.style.transition = 'none';
-            track.style.transform = `translate3d(0, 0, 0)`;
-            // Force reflow
-            track.offsetHeight;
-            track.style.transition = '';
-        }
-        
-        track.style.transform = `translate3d(${-position}px, 0, 0)`;
-        
-        animationId = requestAnimationFrame(animate);
+    function wrap(value, max) {
+        if (max <= 0) return 0;
+        return ((value % max) + max) % max;
     }
 
-    // Start the animation
-    animate();
+    function render() {
+        track.style.transform = `translate3d(${-pos}px, 0, 0)`;
+    }
 
-    // Clean up on page unload
-    window.addEventListener('beforeunload', () => {
-        if (animationId) {
-            cancelAnimationFrame(animationId);
+    function tick(timestamp) {
+        if (lastTimestamp === null) lastTimestamp = timestamp;
+        const dt = timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+
+        if (!isDragging) {
+            const loopWidth = getLoopWidth();
+            pos = wrap(pos + speed * dt, loopWidth);
+            render();
         }
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    function onPointerMove(e) {
+        const loopWidth = getLoopWidth();
+        const dx = e.clientX - dragStartX;
+        pos = wrap(dragStartPos - dx, loopWidth);
+        render();
+    }
+
+    function endDrag() {
+        isDragging = false;
+        container.style.cursor = 'grab';
+        window.removeEventListener('pointermove', onPointerMove);
+        window.removeEventListener('pointerup', endDrag);
+        window.removeEventListener('pointercancel', endDrag);
+    }
+
+    container.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        clearTimeout(wheelResumeTimeout);
+        dragStartX = e.clientX;
+        dragStartPos = pos;
+        container.style.cursor = 'grabbing';
+        // Attach to window, not the container — guarantees we catch the
+        // release even if the finger/cursor leaves the carousel first.
+        window.addEventListener('pointermove', onPointerMove);
+        window.addEventListener('pointerup', endDrag);
+        window.addEventListener('pointercancel', endDrag);
     });
 
+    // Trackpad / mouse wheel horizontal support
+    container.addEventListener('wheel', (e) => {
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        if (delta === 0) return;
+        e.preventDefault();
+        isDragging = true;
+        clearTimeout(wheelResumeTimeout);
+        pos = wrap(pos + delta, getLoopWidth());
+        render();
+        wheelResumeTimeout = setTimeout(() => { isDragging = false; }, 400);
+    }, { passive: false });
 })();
 
 </script>
