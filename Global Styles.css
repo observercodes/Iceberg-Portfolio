@@ -1012,3 +1012,41 @@ width: 20px;
     font-weight: 300;
     line-height: 1.4;
 }
+
+/*This is for image click on enlargement, Image Lightbox*/
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;              /* above .HeaderContainer (1000) */
+    background: rgba(20, 26, 30, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: zoom-out;
+}
+#lightbox.active { display: flex; }
+
+#lightbox img {
+    max-width: 95vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    animation: lbIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes lbIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Stop the page scrolling behind the overlay */
+body.lb-open { overflow: hidden; }
+
+/* Zoom cursor on carousel pictures.
+   Items that navigate carry inline cursor:pointer, which wins over this. */
+.c-item { cursor: zoom-in; }
+#BWC .c-item { cursor: grab; }

@@ -51,8 +51,8 @@
         <div class="c-container" id="MOC">
             <div class="c-track">
                 <div class="c-item"><img src="https://i.postimg.cc/FHLhCDRZ/MOC1.png" class="c-image"></div>
-                <div class="c-item"><img src="https://i.postimg.cc/wBFgKP6g/MOC2.png" class="c-image"></div>
-                <div class="c-item"><img src="https://i.postimg.cc/MZCRMSxh/MOC3.png" class="c-image"></div>
+                <div class="c-item" onclick="showPage('IP2')" style="cursor: pointer;"><img src="https://i.postimg.cc/wBFgKP6g/MOC2.png" class="c-image"></div>
+                <div class="c-item" onclick="showPage('IP3')" style="cursor: pointer;"><img src="https://i.postimg.cc/MZCRMSxh/MOC3.png" class="c-image"></div>
                 <div class="c-item"><img src="https://i.postimg.cc/xCL8b9X8/MOC4.png" class="c-image"></div>
                 <div class="c-item"><img src="https://i.postimg.cc/x1D0LMx0/MOC5.png" class="c-image"></div>
                 <div class="c-item" onclick="showPage('CP')" style="cursor: pointer;"><img src="https://i.postimg.cc/Vs4nJ04f/MOCend.png" class="c-image"></div>
@@ -118,9 +118,21 @@
 
     <p class="MOT">Resources</p>
 <a href="javascript:void(0)" onclick="showPage('IP')" class="ReusableButton">
-    <div class="RB-Row"><p class="RB-Name">Inventory Page</p></div>
+    <div class="RB-Row"><p class="RB-Name">HVAC Inventory Page</p></div>
     <div class="RB-Row"><p class="RB-Info">See what's possible.</p></div>
     <img src="https://i.postimg.cc/L67wpQ49/IBI2.png" class="RB-Icon" alt="Inventory Icon">
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('IP2')" class="ReusableButton">
+    <div class="RB-Row"><p class="RB-Name">Registers & Diffusers</p></div>
+    <div class="RB-Row"><p class="RB-Info">Explore HVAC Vent Designs.</p></div>
+    <img src="https://i.postimg.cc/KzmMCJSg/Vent-Icon.png" class="RB-Icon" alt="Inventory Icon">
+</a>
+
+<a href="javascript:void(0)" onclick="showPage('IP3')" class="ReusableButton">
+    <div class="RB-Row"><p class="RB-Name">Thermostats & Sensors</p></div>
+    <div class="RB-Row"><p class="RB-Info">Temperature Control Showcase.</p></div>
+    <img src="https://i.postimg.cc/9FkyzdZc/Thermostat-Icon.png" class="RB-Icon" alt="Inventory Icon">
 </a>
 
 
@@ -264,11 +276,155 @@
     <img src="https://i.postimg.cc/P51k0fnZ/buildzoom.png" class="RB-Icon" alt="Description">
 </a>
 
-
-
 </div>
 
 <div id="IP" class="PageContent" style="display:none;">
+
+   <div id="inventory-ducted">
+        <p class="MOT">Condenser + Square Air Handler</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/MTDhRykB/DT11.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/nrX0z7p5/DT12.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/RVngxcPS/DT13.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/6Qz0fzQj/DT14.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condenser + Slim Air Handler</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/bwhW6Czh/DT21.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/pd0SLPKy/DT22.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/cC3khY21/DT23.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/QxLyt4KT/DT24.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">2 in 1 Package Unit</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/kgqYN2cm/DT31.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/xdds7BBV/DT32.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/j5wMqPsX/DT33.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/sx5K7zG6/DT34.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/nhFTj6Fc/DT35.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + Wall Mount</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/mg17Mtyz/DL11.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/j2kJnbWB/DL12.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/PrPDsPcS/DL13.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + 4 way Cassette</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/brytJjP4/DL21.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/PfyD7Nzf/DL22.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/x1JbqRwZ/DL23.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/YqjvyRCh/DL25.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/FsVTTK9H/DL26.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + 1 way Cassette</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/J00zv7Mz/DL31.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/T2NwmbJ1/DL32.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/m2crSrmY/DL33.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/V6GYqyM2/DL35.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/6qFtPdM8/DL36.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + Floor Mount</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/hP7Sd5Gy/DL41.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/fRcDHSmq/DL42.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/6QzwKsH4/DL43.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">2 in 1 Window Unit</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/Znvh6WJH/DL51.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/0N5jD0Fw/DL52.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/1tfzY59z/DL53.png" class="c-image"></div>
+        </div></div></div>
+
+</div></div>
+
+<div id="IP2" class="PageContent" style="display:none;">
+
+   <div id="inventory-ducted">
+        <p class="MOT">Condenser + Square Air Handler</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/MTDhRykB/DT11.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/nrX0z7p5/DT12.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/RVngxcPS/DT13.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/6Qz0fzQj/DT14.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condenser + Slim Air Handler</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/bwhW6Czh/DT21.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/pd0SLPKy/DT22.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/cC3khY21/DT23.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/QxLyt4KT/DT24.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">2 in 1 Package Unit</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/kgqYN2cm/DT31.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/xdds7BBV/DT32.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/j5wMqPsX/DT33.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/sx5K7zG6/DT34.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/nhFTj6Fc/DT35.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + Wall Mount</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/mg17Mtyz/DL11.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/j2kJnbWB/DL12.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/PrPDsPcS/DL13.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + 4 way Cassette</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/brytJjP4/DL21.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/PfyD7Nzf/DL22.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/x1JbqRwZ/DL23.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/YqjvyRCh/DL25.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/FsVTTK9H/DL26.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + 1 way Cassette</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/J00zv7Mz/DL31.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/T2NwmbJ1/DL32.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/m2crSrmY/DL33.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/V6GYqyM2/DL35.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/6qFtPdM8/DL36.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">Condensor + Floor Mount</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/hP7Sd5Gy/DL41.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/fRcDHSmq/DL42.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/6QzwKsH4/DL43.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/yYtZV7Cd/DLX4.png" class="c-image"></div>
+        </div></div></div>
+
+        <p class="MOT">2 in 1 Window Unit</p>
+        <div class="carousel-spacer"><div class="c-container"><div class="c-track">
+            <div class="c-item"><img src="https://i.postimg.cc/Znvh6WJH/DL51.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/0N5jD0Fw/DL52.png" class="c-image"></div>
+            <div class="c-item"><img src="https://i.postimg.cc/1tfzY59z/DL53.png" class="c-image"></div>
+        </div></div></div>
+
+</div></div>
+
+<div id="IP3" class="PageContent" style="display:none;">
 
    <div id="inventory-ducted">
         <p class="MOT">Condenser + Square Air Handler</p>
@@ -474,6 +630,72 @@ sliders.forEach(slider => {
     }, { passive: false });
 })();
 
+/* ══ This is for image enlargment on click feature, IMAGE LIGHTBOX 
+   Any picture that doesn't navigate somewhere gets
+   tap-to-enlarge. Delegated, so new images work with
+   no extra wiring.                                     */
+document.addEventListener('DOMContentLoaded', function () {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    if (!lightbox || !lightboxImg) return;
+
+    // "This goes somewhere" → never enlarge.
+    const NAVIGATES = 'a, button, [onclick], .no-zoom, .HeaderContainer, .Footer';
+
+    // Where to look for the picture when the click lands on a wrapper
+    // instead of the <img> (your .c-image has pointer-events: none).
+    const WRAPPERS = '.c-item, .AboutPhotoWrapper, .zoomable';
+
+    // ── Tap vs. drag ──────────────────────────────────
+    let pressed = false, dragged = false, downX = 0, downY = 0;
+
+    document.addEventListener('pointerdown', e => {
+        pressed = true;
+        dragged = false;
+        downX = e.clientX;
+        downY = e.clientY;
+    }, true);
+
+    document.addEventListener('pointermove', e => {
+        if (!pressed) return;
+        if (Math.abs(e.clientX - downX) > 6 ||
+            Math.abs(e.clientY - downY) > 6) dragged = true;
+    }, true);
+
+    document.addEventListener('pointerup',     () => { pressed = false; }, true);
+    document.addEventListener('pointercancel', () => { pressed = false; dragged = true; }, true);
+
+    // ── Open ──────────────────────────────────────────
+    document.addEventListener('click', e => {
+        if (dragged) return;
+        if (lightbox.contains(e.target)) return;
+        if (e.target.closest(NAVIGATES)) return;
+
+        const img = e.target.tagName === 'IMG'
+            ? e.target
+            : e.target.closest(WRAPPERS)?.querySelector('img');
+
+        if (!img || !img.src) return;
+
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('active');
+        document.body.classList.add('lb-open');
+    });
+
+    // ── Close ─────────────────────────────────────────
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.classList.remove('lb-open');
+        lightboxImg.src = '';
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+    });
+});
+
 </script>
 
 <div class="Footer">
@@ -481,6 +703,13 @@ sliders.forEach(slider => {
     <p class="FooterFine">HVAC License C20 #1129607 · Family Owned and Operated · Not owned by Private Equity</p>
     <p class="FooterFine">© 2026 Iceberg Appliance Inc. All rights reserved. Iceberg Appliance Inc™ and all associated logos are trademarks of Iceberg Appliance Inc.</p>
     <a href="tel:+18188142230" class="FooterPhone">For Support Contact: +1 (818)814-2230</a>
+</div>
+
+
+
+<!-- This is for the image enlargemnt on click feature, Image lightbox overlay -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+    <img id="lightbox-img" src="" alt="">
 </div>
 
 </body>
