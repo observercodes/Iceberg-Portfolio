@@ -1050,3 +1050,6 @@ body.lb-open { overflow: hidden; }
    Items that navigate carry inline cursor:pointer, which wins over this. */
 .c-item { cursor: zoom-in; }
 #BWC .c-item { cursor: grab; }
+
+/* Carousel pictures that link to another page */
+a.c-item { cursor: pointer; }
